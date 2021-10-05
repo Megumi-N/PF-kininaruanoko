@@ -233,6 +233,15 @@ function init() {
       },
       true
     );
+  } else if (os == "iPad") {
+    window.addEventListener(
+      "deviceorientation",
+      function orientation(e) {
+        vec.x = e.gamma / 5; // x方向の移動量: そのままでは大きい為、小さくする
+        vec.y = e.beta / 5; // y方向の移動量:
+      },
+      true
+    );
   } else {
     window.alert("PCは未対応です。");
   }
