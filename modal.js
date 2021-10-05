@@ -27,7 +27,7 @@ window.onload = () => {
   <br>
   緑の線に近づきすぎると気になるあの子とのかんけいはリセットされるので気をつけてね！<br>
   そうしないとすぐにジ・エンドだよ！<br>
-  <a href="https://twitter.com/intent/tweet?&text=気になるあの子をコロコロしよう。%0aandroid環境推奨。%0a%23気になるあの子%0a%23コロコロ%0a%23気になるあの子をコロコロするだけのアプリ%0a&url=https://affectionate-bohr-19c20b.netlify.app/"
+  <a href="https://twitter.com/intent/tweet?&text=スマホの傾き検知機能を使って気になるあの子をコロコロしよう。%0aandroid環境推奨。%0a%23気になるあの子%0a%23コロコロ%0a%23気になるあの子をコロコロするだけのアプリ%0a&url=https://affectionate-bohr-19c20b.netlify.app/"
   target="_blank"
   rel="noopener noreferrer"
   >ツイートする</a>

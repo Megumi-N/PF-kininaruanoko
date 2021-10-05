@@ -58,7 +58,7 @@ class KininaruAnoko {
         あなたのころがしテクニックに追いつけるものはいません。<br>
         気になるあの子はもうあなたにメロメロ。<br>
         そうとうなことがないかぎりあなたからはなれられないですね。<br>
-        <a href="https://twitter.com/intent/tweet?&text=他の追随を許さない転がしテクニックを持っています。%0a%0a気になるあの子をコロコロしよう。%0aandroid環境推奨。%0a%23気になるあの子%0a%23コロコロ%0a%23気になるあの子をコロコロするだけのアプリ%0a&url=https://affectionate-bohr-19c20b.netlify.app/"
+        <a href="https://twitter.com/intent/tweet?&text=他の追随を許さない転がしテクニックを持っています。%0a%0aスマホの傾き検知機能を使って気になるあの子をコロコロしよう。%0aandroid環境推奨。%0a%23気になるあの子%0a%23コロコロ%0a%23気になるあの子をコロコロするだけのアプリ%0a&url=https://affectionate-bohr-19c20b.netlify.app/"
         target="_blank"
         rel="noopener noreferrer"
         >ツイートする</a>`;
