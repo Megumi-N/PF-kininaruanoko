@@ -54,8 +54,14 @@ class KininaruAnoko {
         this.y > paddle5
       ) {
         title = "気になるあの子がついに！";
-        body =
-          "もうメロメロ。そうとうなことがないかぎりあなたからはなれられないですね。";
+        body = `
+        あなたのころがしテクニックに追いつけるものはいません。<br>
+        気になるあの子はもうあなたにメロメロ。<br>
+        そうとうなことがないかぎりあなたからはなれられないですね。<br>
+        <a href="https://twitter.com/intent/tweet?&text=他の追随を許さない転がしテクニックを持っています。%0a%0a気になるあの子をコロコロしよう。%0aandroid環境推奨。%0a%23気になるあの子%0a%23コロコロ%0a%23気になるあの子をコロコロするだけのアプリ%0a&url=https://affectionate-bohr-19c20b.netlify.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >ツイートする</a>`;
         modalEdit(title, body);
       } else {
         title = "おんなごころはむずかしい";
@@ -228,6 +234,6 @@ function init() {
       true
     );
   } else {
-    window.alert("PC未対応サンプル");
+    window.alert("PCは未対応です。");
   }
 }

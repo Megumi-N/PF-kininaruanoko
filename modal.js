@@ -18,7 +18,7 @@ const modalResult = new bootstrap.Modal(document.getElementById("result"), {
 
 window.onload = () => {
   modalBase.show();
-  modalTitle.innerHTML = `気になるあの子を<br>コロコロ<br>~in スマホ~`;
+  modalTitle.innerHTML = `気になるあの子を<br>コロコロ 〜in スマホ〜`;
   modalBody.innerHTML = `気になっているあの子をコロコロして、赤いラインのGOALまで進めよう！<br>
   遊びかたは簡単！<br>
   1.コロコロボタンをおすとすぐはじまるから、スマホをじめんとへいこうにする！<br>
@@ -26,13 +26,17 @@ window.onload = () => {
   3.赤いラインまで気になるあの子をつれていく！<br>
   <br>
   緑の線に近づきすぎると気になるあの子とのかんけいはリセットされるので気をつけてね！<br>
-  そうしないとすぐにジ・エンドだよ！
+  そうしないとすぐにジ・エンドだよ！<br>
+  <a href="https://twitter.com/intent/tweet?&text=気になるあの子をコロコロしよう。%0aandroid環境推奨。%0a%23気になるあの子%0a%23コロコロ%0a%23気になるあの子をコロコロするだけのアプリ%0a&url=https://affectionate-bohr-19c20b.netlify.app/"
+  target="_blank"
+  rel="noopener noreferrer"
+  >ツイートする</a>
   `;
 };
 
-function modalEdit(wao, waowao) {
+function modalEdit(title, body) {
   point--;
   modalResult.show();
-  resultTitle.innerHTML = wao;
-  resultBody.innerHTML = waowao;
+  resultTitle.innerHTML = title;
+  resultBody.innerHTML = body;
 }
