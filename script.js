@@ -204,12 +204,9 @@ function init() {
   os = detectOSSimply();
   if (os == "iphone") {
     // safari用。DeviceOrientation APIの使用をユーザに許可して貰う
-    window.onload = () => {
-      permitDeviceOrientationForSafari();
-    };
-    // document
-    //   .querySelector("#permit")
-    //   .addEventListener("click", permitDeviceOrientationForSafari);
+    document
+      .querySelector("#permit")
+      .addEventListener("click", permitDeviceOrientationForSafari);
     //  加速度センサーの値を取得
     window.addEventListener(
       "deviceorientation",
