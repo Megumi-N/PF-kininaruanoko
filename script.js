@@ -6,7 +6,7 @@ let g = null; // コンテキスト
 let vec = { x: 0, y: 0 }; // 加速度センサー値格納用
 let anoko = null; // 表示する気になるあのこ
 const image = new Image();
-image.src = "./face.png";
+image.src = "./images/face.png";
 let point = 1;
 // パドルの分割
 let p = 6;
@@ -33,6 +33,7 @@ class KininaruAnoko {
 
     g.beginPath();
     g.drawImage(image, this.x, this.y);
+    g.closePath();
 
     // 上壁に当たった場合
     if (this.y < 0) {
@@ -130,7 +131,7 @@ function paddle() {
 // ゲームループ
 function mainLoop() {
   const handImage = new Image();
-  handImage.src = "./hand.png";
+  handImage.src = "./images/hand.png";
   g.drawImage(handImage, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
   anoko.draw();
   paddle();
@@ -174,15 +175,6 @@ function detectOSSimply() {
 }
 
 // iPhone + Safariの場合はDeviceOrientation APIの使用許可をユーザに求める
-// function permitDeviceOrientationForSafari() {
-//   DeviceOrientationEvent.requestPermission()
-//     .then((response) => {
-//       if (response === "granted") {
-//         window.addEventListener("deviceorientation", detectDirection);
-//       }
-//     })
-//     .catch(console.error);
-// }
 function permitDeviceOrientationForSafari() {
   if (
     typeof DeviceOrientationEvent !== "undefined" &&
