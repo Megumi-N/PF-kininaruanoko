@@ -31,9 +31,11 @@ class KininaruAnoko {
     this.x += vec.x;
     this.y += vec.y;
 
+    g.save();
     g.beginPath();
     g.drawImage(image, this.x, this.y);
     g.closePath();
+    g.restore();
 
     // 上壁に当たった場合
     if (this.y < 0) {
@@ -71,7 +73,8 @@ class KininaruAnoko {
       }
     }
 
-    if (this.x > 75) {
+    console.log(this.x);
+    if (this.x > 35) {
       // 一本め通過
       if (this.y > paddle1 - 35 && this.y < paddle1) {
         title = "うでがふるえるくらいドキドキ";
@@ -151,7 +154,7 @@ document.getElementById("btn").addEventListener("click", function () {
   // キャンバスサイズ設定
   canvas.width = SCREEN_WIDTH;
   canvas.height = SCREEN_HEIGHT;
-  anoko = new KininaruAnoko(SCREEN_WIDTH - 70, 35, 0); // ボールを一つ生成 x,y,r
+  anoko = new KininaruAnoko(SCREEN_WIDTH - 70, 35, 0); // を生成 x,y,r
   mainLoop(); // メインループ実行
 });
 
@@ -164,7 +167,7 @@ function detectOSSimply() {
     navigator.userAgent.indexOf("iPod") > 0
   ) {
     // iPad OS13のsafariはデフォルト「Macintosh」なので別途要対応
-    ret = "iphone";
+    ret = "apple";
   } else if (navigator.userAgent.indexOf("Android") > 0) {
     ret = "android";
   } else {
@@ -202,14 +205,11 @@ window.addEventListener("DOMContentLoaded", init);
 function init() {
   // 簡易的なOS判定
   os = detectOSSimply();
-  if (os == "iphone") {
-    // safari用。DeviceOrientation APIの使用をユーザに許可して貰う
+  if (os == "apple") {
+    // DeviceOrientation APIの使用をユーザに許可して貰う
     document
-      .querySelector("#permit")
+      .querySelector("#btn")
       .addEventListener("click", permitDeviceOrientationForSafari);
-    // window.onpageshow = () => {
-    //   permitDeviceOrientationForSafari();
-    // };
     //  加速度センサーの値を取得
     window.addEventListener(
       "deviceorientation",
@@ -220,15 +220,6 @@ function init() {
       true
     );
   } else if (os == "android") {
-    window.addEventListener(
-      "deviceorientation",
-      function orientation(e) {
-        vec.x = e.gamma / 5; // x方向の移動量: そのままでは大きい為、小さくする
-        vec.y = e.beta / 5; // y方向の移動量:
-      },
-      true
-    );
-  } else if (os == "iPad") {
     window.addEventListener(
       "deviceorientation",
       function orientation(e) {
