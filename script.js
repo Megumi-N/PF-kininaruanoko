@@ -164,7 +164,7 @@ function detectOSSimply() {
     navigator.userAgent.indexOf("iPod") > 0
   ) {
     // iPad OS13のsafariはデフォルト「Macintosh」なので別途要対応
-    ret = "iphone";
+    ret = "apple";
   } else if (navigator.userAgent.indexOf("Android") > 0) {
     ret = "android";
   } else {
@@ -202,14 +202,11 @@ window.addEventListener("DOMContentLoaded", init);
 function init() {
   // 簡易的なOS判定
   os = detectOSSimply();
-  if (os == "iphone") {
-    // safari用。DeviceOrientation APIの使用をユーザに許可して貰う
+  if (os == "apple") {
+    // DeviceOrientation APIの使用をユーザに許可して貰う
     document
       .querySelector("#btn")
       .addEventListener("click", permitDeviceOrientationForSafari);
-    // window.onpageshow = () => {
-    //   permitDeviceOrientationForSafari();
-    // };
     //  加速度センサーの値を取得
     window.addEventListener(
       "deviceorientation",
@@ -220,15 +217,6 @@ function init() {
       true
     );
   } else if (os == "android") {
-    window.addEventListener(
-      "deviceorientation",
-      function orientation(e) {
-        vec.x = e.gamma / 5; // x方向の移動量: そのままでは大きい為、小さくする
-        vec.y = e.beta / 5; // y方向の移動量:
-      },
-      true
-    );
-  } else if (os == "iPad") {
     window.addEventListener(
       "deviceorientation",
       function orientation(e) {
