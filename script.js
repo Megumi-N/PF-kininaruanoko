@@ -74,7 +74,7 @@ class KininaruAnoko {
     }
 
     console.log(this.x);
-    if (this.x > 50) {
+    if (this.x > 35) {
       // 一本め通過
       if (this.y > paddle1 - 35 && this.y < paddle1) {
         title = "うでがふるえるくらいドキドキ";
