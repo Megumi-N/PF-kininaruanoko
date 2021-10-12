@@ -31,9 +31,11 @@ class KininaruAnoko {
     this.x += vec.x;
     this.y += vec.y;
 
+    g.save();
     g.beginPath();
     g.drawImage(image, this.x, this.y);
     g.closePath();
+    g.restore();
 
     // 上壁に当たった場合
     if (this.y < 0) {
