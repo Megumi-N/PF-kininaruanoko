@@ -73,7 +73,7 @@ class KininaruAnoko {
       }
     }
 
-    if (this.x > 75) {
+    if (this.x > 65) {
       // 一本め通過
       if (this.y > paddle1 - 35 && this.y < paddle1) {
         title = "うでがふるえるくらいドキドキ";
@@ -153,7 +153,7 @@ document.getElementById("btn").addEventListener("click", function () {
   // キャンバスサイズ設定
   canvas.width = SCREEN_WIDTH;
   canvas.height = SCREEN_HEIGHT;
-  anoko = new KininaruAnoko(SCREEN_WIDTH - 70, 35, 0); // ボールを一つ生成 x,y,r
+  anoko = new KininaruAnoko(SCREEN_WIDTH - 70, 35, 0); // 気になるあの子を生成 x,y,r
   mainLoop(); // メインループ実行
 });
 
